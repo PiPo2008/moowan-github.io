@@ -1,0 +1,162 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fefcf8;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  background-color: #b2dfdb;
+  color: #3e2723;
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+  animation: fadeSlideDown 1.2s ease-in-out;
+}
+
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-pic img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #a1887f;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.profile-pic img:hover {
+  transform: scale(1.05);
+}
+
+/* Social Icon */
+.social-Icon {
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+  animation-delay: 0.5s;
+    display: flex;
+  justify-content: center;
+}
+
+.social-Icon a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #00695c;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.social-Icon a::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #4e342e;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.social-Icon a:hover {
+  color: #4e342e;
+}
+
+.social-Icon a:hover::after {
+  width: 100%;
+}
+
+/* Sections */
+section {
+  padding: 30px 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fffaf3;
+  border-left: 5px solid #a1887f;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: calc(var(--delay, 0) * 0.2s);
+}
+
+h2 {
+  color: #00695c;
+  margin-top: 0;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+/* Footer */
+footer {
+  background-color: #d7ccc8;
+  text-align: center;
+  padding: 20px;
+  color: #4e342e;
+  margin-top: 40px;
+  animation: fadeSlideUp 1.2s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .profile-pic img {
+    width: 100px;
+    height: 100px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  section {
+    margin: 10px;
+  }
+}
